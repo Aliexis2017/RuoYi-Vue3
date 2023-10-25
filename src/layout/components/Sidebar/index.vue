@@ -36,6 +36,7 @@ const appStore = useAppStore()
 const settingsStore = useSettingsStore()
 const permissionStore = usePermissionStore()
 
+// 菜单动态路由
 const sidebarRouters =  computed(() => permissionStore.sidebarRouters);
 const showLogo = computed(() => settingsStore.sidebarLogo);
 const sideTheme = computed(() => settingsStore.sideTheme);

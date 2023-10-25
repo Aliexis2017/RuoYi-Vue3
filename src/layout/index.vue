@@ -1,15 +1,19 @@
 <template>
   <div :class="classObj" class="app-wrapper" :style="{ '--current-color': theme }">
     <div v-if="device === 'mobile' && sidebar.opened" class="drawer-bg" @click="handleClickOutside"/>
+<!--    左侧菜单栏-->
     <sidebar v-if="!sidebar.hide" class="sidebar-container" />
     <div :class="{ hasTagsView: needTagsView, sidebarHide: sidebar.hide }" class="main-container">
       <div :class="{ 'fixed-header': fixedHeader }">
+<!--        头部-->
         <navbar @setLayout="setLayout" />
+<!--        页面上方打开菜单标签-->
         <tags-view v-if="needTagsView" />
       </div>
+<!--      页面内容-->
       <app-main />
       <settings ref="settingRef" />
-    </div> 
+    </div>
   </div>
 </template>
 
